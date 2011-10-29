@@ -1,0 +1,4 @@
+This is Joomla plugin that dynamically resizes image in articles. 
+
+This plugin is save server bandwidth and speedup page loading. 
+Plugin require GD, GD2 or php exec function and resize tool.
