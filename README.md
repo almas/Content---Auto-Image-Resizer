@@ -6,7 +6,7 @@
 2. Нэмэлтийн удирдлага хэсэг рүү орж идэвхжүүлэхэд ажиллаж эхлэх 
 
 ### Хэрэглэх үед анхаарах зүйлс
-png файлыг jpg болгож илүү bandwidth хэмнэж байгаа тул нэвт харагддаг png оруулах бол **class="transparent"** классыг зургийнхаа <img таг дотор бичиж өгөх хэрэгтэй. Жишээлбэл: <img src="/image/stories/almas.png" **class="transparent"** style="width: 50px;" /> г.м.
+png файлыг jpg болгож илүү bandwidth хэмнэж байгаа тул нэвт харагддаг png оруулах бол **class="transparent"** классыг зургийнхаа `<img` таг дотор бичиж өгөх хэрэгтэй. Жишээлбэл: `<img src="/image/stories/almas.png" class="transparent" style="width: 50px;" />` г.м.
 
 
 ##English
