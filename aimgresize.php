@@ -25,7 +25,6 @@ defined('_JEXEC') or die('Restricted Access');
 
 $mainframe->registerEvent('onPrepareContent', 'plgImageResize');
 
-
 function resizeImageToThumb($img, $w, $h, $newfilename) {
  //Check if GD extension is loaded
  if (!extension_loaded('gd') && !extension_loaded('gd2')) {
@@ -37,7 +36,7 @@ function resizeImageToThumb($img, $w, $h, $newfilename) {
  switch ($imgInfo[2]) {
   case 1: $im = imagecreatefromgif($img); break;
   case 2: $im = imagecreatefromjpeg($img);  break;
-  case 3: $im = imagecreatefrompng($img); break;
+  case 3: $im = imagecreatefrompng($img); break;  
   default: return false; break;
  }
 
@@ -72,9 +71,11 @@ function resizeImageToThumb($img, $w, $h, $newfilename) {
 
  //Generate the file, and rename it to $newfilename
  switch ($imgInfo[2]) {
-  case 1: imagegif($newImg,$newfilename); break;
-  case 2: imagejpeg($newImg,$newfilename, 85);  break;
-  case 3: imagepng($newImg,$newfilename, 9, PNG_ALL_FILTERS); break;
+  case 1: imagegif($newImg,$newfilename); break; 
+  case 3: 	if(getExtension($newfilename)=='png') {
+				imagepng($newImg,$newfilename, 9, PNG_ALL_FILTERS); break; 
+			}
+  case 2: imagejpeg($newImg,$newfilename, 75);  break;
   default: return false; break;
  }
  			imagedestroy($newfilename);
@@ -160,7 +161,7 @@ function getCache($imagePath, $restofTag)
 	$imageCacheDir = "cache/images/" . getDir($imagePath);
 
 
-	$fileNameCache = $width . "-" . $fileName;
+	if(strstr($restofTag, 'class="transparent"') || getExtension($fileName)=='jpg') { $fileNameCache = $width . "-" . $fileName; } else { $fileNameCache = $width . "-" . $fileName . '.jpg'; }
 
 	$cache = $imageCacheDir . "/" . $fileNameCache;
 	//printf("imageDir %s\n", $imageDir);
@@ -186,7 +187,8 @@ function getCache($imagePath, $restofTag)
 		//printf("no cache");
 		return "<img src=\"images/$imagePath\" $restofTag >";
 	} else {
-		return "<a href=\"/images/$imagePath\" target=_blank><img src=\"$cache\" $restofTag ></a>";
+		return "<img src=\"$cache\" $restofTag >";
+		//return "<a href=\"/images/$imagePath\" target=_blank><img src=\"$cache\" $restofTag ></a>";
 	}
 }
 

@@ -1,4 +1,7 @@
-This is Joomla plugin that dynamically resizes image in articles. 
+Dynamically resizes image in articles. 
 
-This plugin is save server bandwidth and speedup page loading. 
-Plugin require GD, GD2 or php exec function and resize tool.
+This plugin is save server bandwidth and speedup page loading.
+
+Plugin require GD, GD2 or php exec function and resize tool. 
+
+You can use transparent png files with 'class="transparent"' class or it will be converted to no transparent jpg image.

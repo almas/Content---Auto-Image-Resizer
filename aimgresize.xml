@@ -3,12 +3,12 @@
 	<name>Content - Auto Image Resizer</name>
 	<author>Almas Dusal</author>
 	<creationDate>May 2011</creationDate>
-	<version>1.5</version>
+	<version>1.5.1</version>
 	<copyright>http://www.dusal.net. This plugin branched from Daniel Beck's Image Resize plugin (http://joomlacode.org/gf/project/imageresize/frs/)</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>almas@dusal.net</authorEmail>
 	<authorUrl>http://dusal.blogmn.net</authorUrl>
-	<description>Dynamically resizes image in articles. This plugin is save server bandwidth and speedup page loading. Plugin require GD, GD2 or php exec function and resize tool.</description>
+	<description>Dynamically resizes image in articles. This plugin is save server bandwidth and speedup page loading. Plugin require GD, GD2 or php exec function and resize tool. You can use transparent png files with 'class="transparent"' class or it will be converted to no transparent jpg image.</description>
 	<files>
 		<filename plugin="imageresize">aimgresize.php</filename>
 	</files>
